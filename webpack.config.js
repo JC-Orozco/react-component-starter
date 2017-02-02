@@ -9,6 +9,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.js',
+    libraryTarget: 'umd',
+    library: 'ACE'
   },
   module: {
     rules: [
