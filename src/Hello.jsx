@@ -1,3 +1,5 @@
+import "./Hello.css";
+
 export default class Hello extends React.Component {
   constructor(props) {
     super(props);
@@ -8,7 +10,8 @@ export default class Hello extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.greeting}, {this.props.name}!</h1>
+        <h1 styleName='container1'>
+        {this.state.greeting}, {this.props.name}!</h1>
       </div>
     );
   }

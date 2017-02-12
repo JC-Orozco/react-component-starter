@@ -14,7 +14,24 @@ module.exports = {
   },
   module: {
     rules: [
-      {test: /\.(js|jsx)$/, use: 'babel-loader'}
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+        ]
+      },
+      {
+        test: /\.(js|jsx)$/, loader: 'babel-loader',
+        options: {
+          plugins: [
+            'transform-react-jsx',
+            [
+              'react-css-modules'
+            ]
+          ]
+        } 
+      }
     ]
   }
 };
