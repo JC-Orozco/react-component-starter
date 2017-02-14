@@ -1,8 +1,11 @@
 const path = require('path');
-const webpack = require('webpack');
+//const webpack = require('webpack');
+
+const context = path.resolve(__dirname, 'src');
 
 module.exports = {
-  context: path.resolve(__dirname, './src'),
+  context,
+  //context: path.resolve(__dirname, './src'),
   entry: {
     hello: './Hello.jsx',
   },
@@ -27,7 +30,10 @@ module.exports = {
           plugins: [
             'transform-react-jsx',
             [
-              'react-css-modules'
+              'react-css-modules',
+              {
+                context // Without this line the demo does not work!!!
+              }
             ]
           ]
         } 
